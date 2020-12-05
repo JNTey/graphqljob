@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "_internal": {
+      "isDebug": false,
+      "projectRoot": "C:\\Users\\user\\Documents\\GitHub\\graphqljob\\project",
+      "dynamicConfigPath": null,
+      "staticConfigPath": null,
+      "packageJsonPath": "C:\\Users\\user\\Documents\\GitHub\\graphqljob\\project\\package.json"
+    },
+    "name": "project",
+    "slug": "project",
+    "version": "1.0.0",
+    "sdkVersion": "39.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ]
+  }
+}
