@@ -15,6 +15,9 @@
       "ios",
       "android",
       "web"
-    ]
+    ],
+    "android": {
+      "package": "project.com"
+    }
   }
 }
