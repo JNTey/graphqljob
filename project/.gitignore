@@ -33,6 +33,7 @@ local.properties
 # node.js
 #
 node_modules/
+platform-tools/
 npm-debug.log
 yarn-error.log
 
@@ -129,4 +130,7 @@ buck-out/
 .expo/*
 web-build/
 
+
+
 # @end expo-cli
+
