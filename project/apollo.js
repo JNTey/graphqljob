@@ -1,12 +1,12 @@
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
-// import { setContext } from '@apollo/link-context';
+import { setContext } from '@apollo/link-context';
 
-const GRAPHQL_API_URL = 'https://www.graphqlhub.com/graphql';
+const GRAPHQL_API_URL =  "https://api.graphql.jobs/";
 
 /*
 uncomment the code below in case you are using a GraphQL API that requires some form of
 authentication. asyncAuthLink will run every time your request is made and use the token
-you provide while making the request.
+you provide while making the request.*/
 
 
 const TOKEN = '';
@@ -18,7 +18,7 @@ const asyncAuthLink = setContext(async () => {
   };
 });
 
-*/
+
 
 const httpLink = new HttpLink({
   uri: GRAPHQL_API_URL,

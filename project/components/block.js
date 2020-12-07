@@ -3,19 +3,69 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 
 const block=({item})=>{
     
-    const {title} = item; 
+    const {title, company, tags, cities, countries, locationNames} = item;
+    logo = company.logoUrl;
+
+    if(logo==null || logo==""){
+        logo = "https://miro.medium.com/max/400/1*8yGId6pSq_9b7d5ooIcEOA.png";
+    }
+
+    name_array = [];
+    locations = "";
+
+    if (locationNames!=null){
+        locations = locationNames;
+    }
+    else if( cities.length!=0){
+        for(i=0;i<cities.length;i++){
+            if(i==cities.length-1){
+                locations += cities[i].name;
+            }
+            else{
+                locations += cities[i].name + ", ";
+            }   
+        }
+    }
+    else if(countries.length!=0){
+        for(i=0;i<countries.length;i++){
+            if(i==countries.length-1){
+                locations += countries[i].name;
+            }
+            else{
+                locations += countries[i].name + ", ";
+            }   
+        }
+    }
+    else{
+        locations = "Unknown Location";
+    }
+
+
+
+    for(i=0;i<tags.length;i++){
+        if(i==tags.length-1){
+            tagnames = tags[i].name;
+        }
+        else{
+            tagnames = tags[i].name + ", ";
+        }   
+        name_array.push(tagnames);
+    }
     
     return(
         <View style={styles.container}>
             <View style={styles.block}>
-                <Image style={styles.image} source={require('../android/app/src/main/assets/ruby.png')}/>
+                <Image style={styles.image} source={{uri: logo}}/>
                 <Text style={styles.title}>{title}</Text>
-                <Text style={styles.company}>Company</Text>              
             </View>
             <View style={styles.block}>
-                <Text style={styles.skills}>Skills</Text>
-                <Text style={styles.location}>Location</Text>
-            </View>       
+                <Text style={styles.company}>{company.name}</Text> 
+                <Text style={styles.location}>{locations}</Text>
+            </View>
+            <View style={styles.block}>
+                <Text style={styles.skills}>{name_array}</Text>
+            </View> 
+
         </View>
     );
 
@@ -26,7 +76,7 @@ const styles=StyleSheet.create({
     container:{
         marginTop: 10,
         width: '95%',
-        height: 125,
+        height: 150,
         backgroundColor: 'white',
         borderRadius: 8,
         justifyContent: "center",
@@ -39,45 +89,55 @@ const styles=StyleSheet.create({
         flexDirection: "row",
     },
     image:{
-        width: '25%',
+        width: '15%',
         height: 50,
         resizeMode: 'contain',
-        marginLeft: 10,
+        marginLeft: 8,
+        paddingLeft: 5,
         marginTop: 10,
     },
     title:{
-        width: '45%',
+        width: '80%',
         height: 50,
-        paddingLeft: 8,
+        paddingLeft: 10,
+        paddingRight: 5,
+        marginRight: 5,
         fontSize: 18,
         justifyContent: "center",
-        marginTop: 20,
+        alignContent:"center",
+        marginTop: 10,
         fontWeight: "bold"
     },
     company:{
-        width: '25%',
-        height: 50,
-        paddingLeft: 8,
+        width: '50%',
+        height: 30,
+        marginLeft: 5,
+        paddingLeft: 5,
         fontSize: 12,
         justifyContent: "center",
         marginTop: 25,
     },
     skills:{
-        width: '70%',
+        width: '95%',
         height: 30,
-        paddingLeft: 8,
+        paddingRight: 5,
+        paddingLeft: 5,
+        marginLeft: 5,
+        marginRight: 5,
         fontSize: 10,
         justifyContent: "center",
-        marginTop: 15,
-        marginLeft: 15
+        marginTop: 10,
     },
     location:{
-        width: '25%',
+        width: '45%',
         height: 30,
-        paddingLeft: 8,
+        // paddingLeft: 8,
+        paddingRight: 5,
+        marginRight: 5,
         fontSize: 10,
         justifyContent: "center",
-        marginTop: 15,
+        marginTop: 25,
+        textAlign:'right'
     }
 })
 
