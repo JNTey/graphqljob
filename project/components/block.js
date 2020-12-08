@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
+import Button from './favouritebutton';
 
 const block=({item})=>{
     
@@ -64,6 +65,7 @@ const block=({item})=>{
             </View>
             <View style={styles.block}>
                 <Text style={styles.skills}>{name_array}</Text>
+                <Button></Button>
             </View> 
 
         </View>
@@ -118,7 +120,7 @@ const styles=StyleSheet.create({
         marginTop: 25,
     },
     skills:{
-        width: '95%',
+        width: '80%',
         height: 30,
         paddingRight: 5,
         paddingLeft: 5,
@@ -131,7 +133,7 @@ const styles=StyleSheet.create({
     location:{
         width: '45%',
         height: 30,
-        // paddingLeft: 8,
+        paddingLeft: 5,
         paddingRight: 5,
         marginRight: 5,
         fontSize: 10,

@@ -30,7 +30,11 @@ const GQLApp = () => {
 
   const { loading, error, data } = useQuery(JOBS_QUERY);
 
-  if (loading) return <Text>LOADING</Text>;
+  if (loading) return (
+    <Screen>
+      <Searchbar setsearchterm={setsearchterm}/>
+      <Text style={styles.header}>LOADING...</Text>
+    </Screen>);
   if (error) return `Error! ${error.message}`;
 
   const filter 
@@ -49,7 +53,7 @@ const GQLApp = () => {
       <Verticallist data={filter}/>
     </Screen>
   )
-  
+
 }
 
 export default function app(){
