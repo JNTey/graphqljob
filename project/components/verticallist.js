@@ -2,6 +2,7 @@ import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 import Block from './block';
 
+
 const verticallist=({data})=>{
     return(
         <View style={styles.container}>
@@ -12,6 +13,7 @@ const verticallist=({data})=>{
         </View>
     );
 }
+
 
 const styles=StyleSheet.create({
     container:{
@@ -24,5 +26,6 @@ const styles=StyleSheet.create({
         marginBottom: 10,
     }
 })
+
 
 export default verticallist;

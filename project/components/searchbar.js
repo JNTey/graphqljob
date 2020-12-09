@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, TextInput, StyleSheet, Text} from 'react-native';
+import {View, TextInput, StyleSheet} from 'react-native';
+
 
 const searchbar=({setsearchterm})=>{
     return(
@@ -9,6 +10,7 @@ const searchbar=({setsearchterm})=>{
         </View>
     );
 }
+
 
 const styles=StyleSheet.create({
     container:{
@@ -26,5 +28,6 @@ const styles=StyleSheet.create({
         fontSize: 16
     }
 })
+
 
 export default searchbar;

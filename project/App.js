@@ -6,6 +6,7 @@ import Verticallist from './components/verticallist';
 import { apolloClient } from './apollo';
 import { ApolloProvider, useQuery, gql } from '@apollo/client';
 
+
 const JOBS_QUERY = gql
 `query{
   jobs(input:{
@@ -25,9 +26,8 @@ const JOBS_QUERY = gql
 
 
 const GQLApp = () => {
-
+ 
   const [searchterm, setsearchterm] = useState("");
-
   const { loading, error, data } = useQuery(JOBS_QUERY);
 
   if (loading) return (
@@ -56,6 +56,7 @@ const GQLApp = () => {
 
 }
 
+
 export default function app(){
   return(
     <ApolloProvider client={apolloClient}>
@@ -63,6 +64,7 @@ export default function app(){
     </ApolloProvider>
   )
 }
+
 
 const styles=StyleSheet.create({
   header:{
@@ -75,4 +77,3 @@ const styles=StyleSheet.create({
     justifyContent: "center"
   },
 });
-

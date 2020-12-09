@@ -2,9 +2,11 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import Button from './favouritebutton';
 
+
 const block=({item})=>{
     
-    const {title, company, tags, cities, countries, locationNames} = item;
+    const {title, company, tags, cities, countries, locationNames, id} = item;
+
     logo = company.logoUrl;
 
     if(logo==null || logo==""){
@@ -41,8 +43,6 @@ const block=({item})=>{
         locations = "Unknown Location";
     }
 
-
-
     for(i=0;i<tags.length;i++){
         if(i==tags.length-1){
             tagnames = tags[i].name;
@@ -65,7 +65,7 @@ const block=({item})=>{
             </View>
             <View style={styles.block}>
                 <Text style={styles.skills}>{name_array}</Text>
-                <Button></Button>
+                <Button id={id} ></Button>
             </View> 
 
         </View>
@@ -142,5 +142,6 @@ const styles=StyleSheet.create({
         textAlign:'right'
     }
 })
+
 
 export default block;

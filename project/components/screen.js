@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
+
 const screen=({children})=>{
     return(
         <View style={styles.container}>
@@ -9,6 +10,7 @@ const screen=({children})=>{
     );
 }
 
+
 const styles=StyleSheet.create({
     container:{
         paddingHorizontal: 15,
@@ -16,5 +18,6 @@ const styles=StyleSheet.create({
         flex:1
     }
 })
+
 
 export default screen;
