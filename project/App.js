@@ -5,6 +5,8 @@ import Screen from './components/screen';
 import Verticallist from './components/verticallist';
 import { apolloClient } from './apollo';
 import { ApolloProvider, useQuery, gql } from '@apollo/client';
+import SyncStorage from 'sync-storage';
+// import SimpleStorage from 'react-simple-storage'
 
 
 const JOBS_QUERY = gql
@@ -60,6 +62,7 @@ const GQLApp = () => {
 export default function app(){
   return(
     <ApolloProvider client={apolloClient}>
+      {/* <SimpleStorage/> */}
       <GQLApp/>
     </ApolloProvider>
   )

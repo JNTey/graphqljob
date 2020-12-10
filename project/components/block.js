@@ -1,11 +1,16 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import Button from './favouritebutton';
+import SyncStorage from 'sync-storage';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 const block=({item})=>{
     
     const {title, company, tags, cities, countries, locationNames, id} = item;
+
+    // console.log(AsyncStorage.getItem(id));
+    
 
     logo = company.logoUrl;
 

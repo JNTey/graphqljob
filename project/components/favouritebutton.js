@@ -3,6 +3,8 @@ import {Observer, useLocalObservable} from 'mobx-react' // 6.x
 import {StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {onSnapshot, types} from "mobx-state-tree";
 import SyncStorage from 'sync-storage';
+import AsyncStorage from '@react-native-community/async-storage';
+import localStorage from 'mobx-localstorage';
 
 
 const Fav = ({id}) => {
@@ -41,7 +43,10 @@ const Fav = ({id}) => {
   }
 
   const i_create = i.create(initial);
-  onSnapshot(i_create, snapshot=>{SyncStorage.set(id,snapshot)});
+  onSnapshot(i_create, snapshot=>{
+    SyncStorage.set(id,snapshot)
+    // localStorage.setItem(id,"JSON.stringify(snapshot)")
+  });
 
   return (
     <Observer>{
