@@ -3,8 +3,8 @@ import {Observer, useLocalObservable} from 'mobx-react' // 6.x
 import {StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {onSnapshot, types} from "mobx-state-tree";
 import SyncStorage from 'sync-storage';
-import AsyncStorage from '@react-native-community/async-storage';
-import localStorage from 'mobx-localstorage';
+// import AsyncStorage from '@react-native-community/async-storage';
+// import localStorage from 'mobx-localstorage';
 
 
 const Fav = ({id}) => {
